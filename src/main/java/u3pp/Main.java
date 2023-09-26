@@ -12,16 +12,32 @@ class Main {
 
 	public static void main(String[] args) {
 
-		//YOUR CODE HERE
+		Scanner sc = new Scanner (System.in);
 
 		System.out.print("Enter a year (or enter STOP to end): ");
 		String input = sc.nextLine();
+		if (input == ("STOP")){
+			sc.close();
+		}
+		
+		
+		
 
 		while (!input.toUpperCase().equals("STOP")) {
-			/* YOUR CODE HERE */
+			int year = Integer.parseInt(input);
+			if (LeapYear.isLeapYear(year)== true) {
+				System.out.println (year + " is a leap year");
+			
+			}
+			else 
+			{
+				System.out.println (year + " is not a leap year");
+			}
+			
 			System.out.print("Enter a year (or enter STOP to end): ");
-			//YOUR CODE HERE
+			input = sc.nextLine();
+			
 		}
-		//YOUR CODE HERE
+		sc.close();
 	}
 }
